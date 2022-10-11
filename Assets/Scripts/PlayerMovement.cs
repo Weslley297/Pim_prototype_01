@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float directionX = 0;
-    public float directionY = 1;
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movement;
-    
+
+    private Vector2 movement = new Vector2();
     private readonly Vector3 LEFT = new Vector3(-1,1,1);
     private readonly Vector3 RIGHT = new Vector3(1,1,1);
 
@@ -28,33 +26,28 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private Vector2 getLinearMovement(){
-        Vector2 move;
-        move.x = Input.GetAxisRaw("Horizontal");
-        if(move.x != 0){
-            directionX = move.x;
-            directionY = 0;
-
-            move.y = 0;
-            return move;
+        Vector2 axle;
+        axle.x = Input.GetAxisRaw("Horizontal");
+        if(axle.x != 0){
+            return new Vector2(axle.x, 0);
         }
 
-        move.y = Input.GetAxisRaw("Vertical");
-        if(move.y != 0){
-            directionY = move.y;
-            directionX = 0;
+        axle.y = Input.GetAxisRaw("Vertical");
+        if(axle.y != 0){
+           return new Vector2(0, axle.y);
         }
 
-        return move;
+        return new Vector2(axle.x, axle.y);
     }
 
     private void setStateParameters(){
-        anim.SetFloat("DirX", directionX);
-        anim.SetFloat("DirY", directionY);  
+        anim.SetFloat("DirX", movement.x);
+        anim.SetFloat("DirY", movement.y);  
         anim.SetFloat("Speed", movement.sqrMagnitude);  
     }
 
     private Vector3 getLeftRight(){
-        return directionX > 0 ? RIGHT : LEFT;
+        return movement.x > 0 ? RIGHT : LEFT;
     }
     
 }
