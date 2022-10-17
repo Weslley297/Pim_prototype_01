@@ -367,9 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa29b2f8ecb8bf643881127550255995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
-  waitDelay: 0.1
-  moveDelay: 0.4
+  moveSpeed: 3
   anim: {fileID: 240535703}
 --- !u!195 &240535700
 NavMeshAgent:
@@ -853,9 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa29b2f8ecb8bf643881127550255995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
-  waitDelay: 0
-  moveDelay: 0
+  moveSpeed: 3
   anim: {fileID: 667069503}
 --- !u!114 &667069508
 MonoBehaviour:
@@ -964,9 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa29b2f8ecb8bf643881127550255995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
-  waitDelay: 0
-  moveDelay: 0
+  moveSpeed: 3
   anim: {fileID: 964524967}
 --- !u!195 &964524964
 NavMeshAgent:
